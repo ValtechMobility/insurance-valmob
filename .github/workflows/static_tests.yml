@@ -1,0 +1,27 @@
+name: "Code Validate"
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout This Repo
+        uses: actions/checkout@v4
+
+      - name: Unit Test
+        run: ./dev ./bin/unittest
+
+  Format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout This Repo
+        uses: actions/checkout@v4
+
+      - name: Format Check
+        run: |
+          set -e
+          check= ./bin/format
+          git diff --exit-code
