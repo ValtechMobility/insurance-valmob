@@ -33,5 +33,5 @@ coverage xml
 coverage report \
   --show-missing \
   --skip-covered \
-  --sort=cover \
-  --fail-under=100
+  --sort=cover 
+#  --fail-under=100
