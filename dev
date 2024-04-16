@@ -26,4 +26,5 @@ fi
 
 docker build --tag insurance-blueprint --quiet --file Dockerfile . &> /dev/null &&
 docker run \
+    --rm \
     insurance-blueprint "$@"
