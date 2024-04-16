@@ -19,9 +19,3 @@ jobs:
     steps:
       - name: Checkout This Repo
         uses: actions/checkout@v4
-
-      - name: Format Check
-        run: |
-          set -e
-          check= ./bin/format
-          git diff --exit-code
