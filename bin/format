@@ -52,4 +52,4 @@ docker run --rm --entrypoint blackdoc --user $UID -v $(pwd):/data -w /data black
 
 ls -1 features/*.feature | xargs -I {} docker run --rm -v $(pwd):/work gherkin/format --replace /work/{} --verbose
 
-find . -type f | grep -v '^./build/' | perl -lne 'print if -T' | grep -v './.git' | xargs grep -l '  *$' | xargs -r sed -i 's/ *$//'
+find . -type f | grep -v '^./edge/digital_twin_providers/' -e '^./edge/digital-twin-model/' -e '^./edge/proto_build/' | perl -lne 'print if -T' | grep -v './.git' | xargs grep -l '  *$' | xargs -r sed -i 's/ *$//'
